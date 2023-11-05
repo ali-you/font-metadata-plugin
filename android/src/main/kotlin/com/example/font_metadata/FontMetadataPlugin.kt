@@ -1,5 +1,6 @@
 package com.example.font_metadata
 
+import FontMetadata
 import androidx.annotation.NonNull
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
@@ -9,27 +10,29 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 
 /** FontMetadataPlugin */
-class FontMetadataPlugin: FlutterPlugin, MethodCallHandler {
-  /// The MethodChannel that will the communication between Flutter and native Android
-  ///
-  /// This local reference serves to register the plugin with the Flutter Engine and unregister it
-  /// when the Flutter Engine is detached from the Activity
-  private lateinit var channel : MethodChannel
+class FontMetadataPlugin : FlutterPlugin, MethodCallHandler {
 
-  override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "font_metadata")
-    channel.setMethodCallHandler(this)
-  }
+    private val channelName = "alibahareh.flutter.plugins.fontmetadata/channel"
 
-  override fun onMethodCall(call: MethodCall, result: Result) {
-    if (call.method == "getPlatformVersion") {
-      result.success("Android ${android.os.Build.VERSION.RELEASE}")
-    } else {
-      result.notImplemented()
+    private lateinit var channel: MethodChannel
+
+    override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+        channel = MethodChannel(flutterPluginBinding.binaryMessenger, channelName)
+        channel.setMethodCallHandler(this)
     }
-  }
 
-  override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
-    channel.setMethodCallHandler(null)
-  }
+    override fun onMethodCall(call: MethodCall, result: Result) {
+        if (call.method == "getFontName") {
+//      result.success("Android ${android.os.Build.VERSION.RELEASE}")
+            val path: String? = call.argument("path")
+            val name: String? = FontMetadata().getFontName(filePath = path) ?: ""
+            result.success(name)
+        } else {
+            result.notImplemented()
+        }
+    }
+
+    override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
+        channel.setMethodCallHandler(null)
+    }
 }

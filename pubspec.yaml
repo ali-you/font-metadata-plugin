@@ -1,7 +1,10 @@
 name: font_metadata
-description: A new Flutter project.
+description: Flutter plugin to get font files metadata and attributes
 version: 0.0.1
-homepage:
+homepage: https://uvstudio.fun/
+repository: https://github.com/ali-you/font-metadata-plugin.git
+documentation: https://github.com/ali-you/font-metadata-plugin
+issue_tracker: https://github.com/ali-you/font-metadata-plugin/issues
 
 environment:
   sdk: '>=3.1.2 <4.0.0'

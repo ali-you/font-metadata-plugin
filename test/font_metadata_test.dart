@@ -7,9 +7,11 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockFontMetadataPlatform
     with MockPlatformInterfaceMixin
     implements FontMetadataPlatform {
-
   @override
-  Future<String?> getPlatformVersion() => Future.value('42');
+  Future<String?> getFontName({String? path}) {
+    // TODO: implement getFontName
+    throw UnimplementedError();
+  }
 }
 
 void main() {
@@ -20,10 +22,10 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    FontMetadata fontMetadataPlugin = FontMetadata();
+    FontMetadata fontMetadataPlugin = FontMetadata("/data/user/0/com.example.font_metadata_example/cache/file_picker/B-NAZANIN.TTF");
     MockFontMetadataPlatform fakePlatform = MockFontMetadataPlatform();
     FontMetadataPlatform.instance = fakePlatform;
 
-    expect(await fontMetadataPlugin.getPlatformVersion(), '42');
+    expect(await fontMetadataPlugin.getFontName(), '42');
   });
 }

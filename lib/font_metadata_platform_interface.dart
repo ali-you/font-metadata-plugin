@@ -23,7 +23,7 @@ abstract class FontMetadataPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
+  Future<String?> getFontName({String? path}) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }

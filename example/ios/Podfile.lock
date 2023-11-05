@@ -1,0 +1,81 @@
+PODS:
+  - DKImagePickerController/Core (4.3.4):
+    - DKImagePickerController/ImageDataManager
+    - DKImagePickerController/Resource
+  - DKImagePickerController/ImageDataManager (4.3.4)
+  - DKImagePickerController/PhotoGallery (4.3.4):
+    - DKImagePickerController/Core
+    - DKPhotoGallery
+  - DKImagePickerController/Resource (4.3.4)
+  - DKPhotoGallery (0.0.17):
+    - DKPhotoGallery/Core (= 0.0.17)
+    - DKPhotoGallery/Model (= 0.0.17)
+    - DKPhotoGallery/Preview (= 0.0.17)
+    - DKPhotoGallery/Resource (= 0.0.17)
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Core (0.0.17):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Preview
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Model (0.0.17):
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Preview (0.0.17):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Resource
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Resource (0.0.17):
+    - SDWebImage
+    - SwiftyGif
+  - file_picker (0.0.1):
+    - DKImagePickerController/PhotoGallery
+    - Flutter
+  - Flutter (1.0.0)
+  - font_metadata (0.0.1):
+    - Flutter
+  - integration_test (0.0.1):
+    - Flutter
+  - SDWebImage (5.18.3):
+    - SDWebImage/Core (= 5.18.3)
+  - SDWebImage/Core (5.18.3)
+  - SwiftyGif (5.4.4)
+
+DEPENDENCIES:
+  - file_picker (from `.symlinks/plugins/file_picker/ios`)
+  - Flutter (from `Flutter`)
+  - font_metadata (from `.symlinks/plugins/font_metadata/ios`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+
+SPEC REPOS:
+  trunk:
+    - DKImagePickerController
+    - DKPhotoGallery
+    - SDWebImage
+    - SwiftyGif
+
+EXTERNAL SOURCES:
+  file_picker:
+    :path: ".symlinks/plugins/file_picker/ios"
+  Flutter:
+    :path: Flutter
+  font_metadata:
+    :path: ".symlinks/plugins/font_metadata/ios"
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+
+SPEC CHECKSUMS:
+  DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
+  DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
+  file_picker: 15fd9539e4eb735dc54bae8c0534a7a9511a03de
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  font_metadata: 8af46166fa86870cf85f19f1ee56b20a45019dc5
+  integration_test: 13825b8a9334a850581300559b8839134b124670
+  SDWebImage: 96e0c18ef14010b7485210e92fac888587ebb958
+  SwiftyGif: 93a1cc87bf3a51916001cf8f3d63835fb64c819f
+
+PODFILE CHECKSUM: 70d9d25280d0dd177a5f637cdb0f0b0b12c6a189
+
+COCOAPODS: 1.13.0

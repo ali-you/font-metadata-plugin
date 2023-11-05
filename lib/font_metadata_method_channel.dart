@@ -7,11 +7,13 @@ import 'font_metadata_platform_interface.dart';
 class MethodChannelFontMetadata extends FontMetadataPlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
-  final methodChannel = const MethodChannel('font_metadata');
+  final methodChannel =
+      const MethodChannel("alibahareh.flutter.plugins.fontmetadata/channel");
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
+  Future<String?> getFontName({String? path}) async {
+    final fontName =
+        await methodChannel.invokeMethod<String>('getFontName', {"path": path});
+    return fontName;
   }
 }
