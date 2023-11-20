@@ -49,7 +49,9 @@ class _MyAppState extends State<MyApp> {
                     if (extension == 'ttf' || extension == 'otf') {
                       if (mounted) {
                         FontMetadata fontMetadata =
-                            FontMetadata(Platform.isIOS ? result.files.single.identifier! : file.path);
+                            FontMetadata(FontFileSource(path: Platform.isIOS ? result.files.single.identifier! : file.path));
+
+
                         _fontName = await fontMetadata.getFontName() ?? "";
                         setState(() {});
                       }

@@ -22,7 +22,7 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    FontMetadata fontMetadataPlugin = FontMetadata("/data/user/0/com.example.font_metadata_example/cache/file_picker/B-NAZANIN.TTF");
+    FontMetadata fontMetadataPlugin = FontMetadata(FontFileSource(path: "/data/user/0/com.example.font_metadata_example/cache/file_picker/B-NAZANIN.TTF"));
     MockFontMetadataPlatform fakePlatform = MockFontMetadataPlatform();
     FontMetadataPlatform.instance = fakePlatform;
 

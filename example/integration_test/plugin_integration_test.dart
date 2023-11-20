@@ -15,7 +15,8 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets('getPlatformVersion test', (WidgetTester tester) async {
-    final FontMetadata plugin = FontMetadata("/data/user/0/com.example.font_metadata_example/cache/file_picker/B-NAZANIN.TTF");
+    // final FontMetadata plugin = FontMetadata("/data/user/0/com.example.font_metadata_example/cache/file_picker/B-NAZANIN.TTF");
+    final FontMetadata plugin = FontMetadata(FontFileSource(path: "/data/user/0/com.example.font_metadata_example/cache/file_picker/B-NAZANIN.TTF"));
     final String? version = await plugin.getFontName();
     // The version string depends on the host platform running the test, so
     // just assert that some non-empty string is returned.
