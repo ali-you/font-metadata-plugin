@@ -1,6 +1,6 @@
 # font_metadata
 
-A new Flutter project.
+A Flutter plugin to get .ttf, .otf files metadata
 
 ## Getting Started
 
@@ -12,4 +12,12 @@ Android and/or iOS.
 For help getting started with Flutter development, view the
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Release tips
+
+if use progaurd, you must to add:
+```
+-keep class org.apache.fontbox.ttf.** { *; }
+```
+to progaurd-rules.pro file
 

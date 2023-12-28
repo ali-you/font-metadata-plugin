@@ -18,7 +18,7 @@ class FontMetadata {
         } catch (e: IOException) {
             e.printStackTrace()
             return null
-        } catch (e){
+        } catch (e: Exception){
             e.printStackTrace()
             return null
         }
