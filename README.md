@@ -18,6 +18,7 @@ samples, guidance on mobile development, and a full API reference.
 if use progaurd, you must to add:
 ```
 -keep class org.apache.fontbox.ttf.** { *; }
+-keep class org.apache.commons.logging.** { *; }
 ```
 to progaurd-rules.pro file
 
