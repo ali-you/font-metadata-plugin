@@ -6,23 +6,22 @@ import java.io.IOException
 
 class FontMetadata {
     public fun getFontName(filePath: String?): String? {
-        val file = File(filePath ?: "")
-        val font: TrueTypeFont
-
         try {
+            val file = File(filePath ?: "")
+            val font: TrueTypeFont
             val ttfParser = TTFParser()
             font = ttfParser.parse(file)
+            val naming = font.naming
+            val fontFamily = naming.fontFamily
+            font.close()
+            return fontFamily
         } catch (e: IOException) {
             e.printStackTrace()
             return null
+        } catch (e){
+            e.printStackTrace()
+            return null
         }
-
-        val naming = font.naming
-        val fontFamily = naming.fontFamily
-
-        font.close()
-
-        return fontFamily
-
+        return  null
     }
 }
